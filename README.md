@@ -7,7 +7,7 @@
 
 ### Babel + nodemon
 
--   install
+-   Install
 
 ```Shell
 npm install --save-dev @babel/cli @babel/core @babel/node @babel/preset-env nodemon
