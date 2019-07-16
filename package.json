@@ -3,10 +3,10 @@
     "version": "1.0.0",
     "description": "GraphQL Demo",
     "private": true,
-    "main": "app.js",
+    "main": "src/app.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "nodemon app.js"
+        "start": "nodemon --exec babel-node src/app.js",
+        "build": "babel src --out-dir build"
     },
     "repository": {
         "type": "git",
@@ -23,6 +23,10 @@
     },
     "homepage": "https://github.com/samnoh/graphql-demo#readme",
     "devDependencies": {
+        "@babel/cli": "^7.5.0",
+        "@babel/core": "^7.5.4",
+        "@babel/node": "^7.5.0",
+        "@babel/preset-env": "^7.5.4",
         "nodemon": "^1.19.1"
     },
     "dependencies": {
