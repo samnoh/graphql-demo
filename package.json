@@ -12,7 +12,10 @@
         "type": "git",
         "url": "git+https://github.com/samnoh/graphql-demo.git"
     },
-    "keywords": [],
+    "keywords": [
+        "GraphQL",
+        "graphql-yoga"
+    ],
     "author": "",
     "license": "MIT",
     "bugs": {
@@ -21,5 +24,8 @@
     "homepage": "https://github.com/samnoh/graphql-demo#readme",
     "devDependencies": {
         "nodemon": "^1.19.1"
+    },
+    "dependencies": {
+        "graphql-yoga": "^1.18.1"
     }
 }
