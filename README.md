@@ -9,7 +9,7 @@
 ### GraphQL
 
 -   Schemas
-    -   ! means required
+    -   ! means a mandatory variable
 
 ```graphql
 # import Test from 'test.graphql'
@@ -81,7 +81,7 @@ npm install -g pm2 && npm install --save pm2
 ```
 
 -   package.json
-    -   --copy-files -> build with static files including graphql files
+    -   --copy-files -> build with non-JS files including graphql
 
 ```JSON
 "scripts": {
