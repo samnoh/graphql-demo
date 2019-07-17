@@ -86,3 +86,9 @@ npm install --save-dev @babel/cli @babel/core @babel/node @babel/preset-env node
     "build": "babel src --out-dir build"
 }
 ```
+
+-   dotenv
+
+```JavaScript
+import 'dotenv/config'; // import dotenv at the very start
+```
