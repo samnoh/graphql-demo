@@ -12,4 +12,6 @@ const typeDefs = importSchema(path.join(__dirname, 'graphql', 'schema.graphql'))
 
 const server = new GraphQLServer({ typeDefs, resolvers });
 
-server.start(() => console.log('GraphQL server running on localhost:4000'));
+server.start({ port: process.env.PORT || 4000, playground: false }, ({ port }) =>
+    console.log(`GraphQL server running on localhost:${port}`)
+);

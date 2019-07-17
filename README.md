@@ -64,7 +64,7 @@ Mutation {
 }
 ```
 
-### Babel + nodemon
+### Babel + nodemon + pm2
 
 -   Install
 
@@ -82,8 +82,8 @@ npm install --save-dev @babel/cli @babel/core @babel/node @babel/preset-env node
 
 ```JSON
 "scripts": {
-    "start": "nodemon --exec babel-node src/app.js",
-    "build": "babel src --out-dir build"
+    "start": "NODE_ENV=production pm2 start --interpreter babel-node src/app.js -i 0",
+    "dev": "nodemon --exec babel-node src/app.js"
 }
 ```
 

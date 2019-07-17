@@ -5,9 +5,9 @@
     "private": true,
     "main": "src/app.js",
     "scripts": {
-        "start": "NODE_ENV=production pm2 build/app.js -i 0",
+        "start": "NODE_ENV=production PORT=80 pm2 start --interpreter babel-node src/app.js -i 0",
         "dev": "nodemon --exec babel-node src/app.js ",
-        "build": "babel src --out-dir build"
+        "build": "babel src/app.js --out-dir build"
     },
     "repository": {
         "type": "git",
@@ -27,10 +27,12 @@
         "@babel/cli": "^7.5.0",
         "@babel/core": "^7.5.4",
         "@babel/node": "^7.5.0",
+        "@babel/plugin-transform-runtime": "^7.5.0",
         "@babel/preset-env": "^7.5.4",
         "nodemon": "^1.19.1"
     },
     "dependencies": {
+        "@babel/runtime": "^7.5.4",
         "dotenv": "^8.0.0",
         "graphql-import": "^0.7.1",
         "graphql-yoga": "^1.18.1",
