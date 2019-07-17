@@ -1,7 +1,7 @@
 # Graph QL
 
--   graphql
 -   graphql-yoga
+-   mongoose
 
 ## TIL
 
@@ -30,7 +30,7 @@ const resolvers = {
         tests: () => {...}
     },
     Mutation: {
-        addTest: (_, {id}) => {...}
+        addTest: (_, { id }) => {...}
     }
 }
 ```
