@@ -12,7 +12,8 @@ export default () => {
         mongoose.connect(
             MONGO_URL,
             {
-                useNewUrlParser: true
+                useNewUrlParser: true,
+                useFindAndModify: false
             },
             error => {
                 if (error) {
