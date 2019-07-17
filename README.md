@@ -70,6 +70,7 @@ Mutation {
 
 ```Shell
 npm install --save-dev @babel/cli @babel/core @babel/node @babel/preset-env nodemon
+npm install -g pm2 && npm install --save pm2
 ```
 
 -   .babelrc
@@ -85,7 +86,7 @@ npm install --save-dev @babel/cli @babel/core @babel/node @babel/preset-env node
 "scripts": {
     "start": "NODE_ENV=production pm2 start build/app.js -i 0",
     "dev": "nodemon --exec babel-node src/app.js",
-    "build": "npm run clean && babel src --out-dir build --copy-files",
+    "build": "babel src --out-dir build --copy-files",
 }
 ```
 
