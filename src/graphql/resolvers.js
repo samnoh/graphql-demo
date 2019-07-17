@@ -1,4 +1,5 @@
 import User from '../models/user';
+import { getMovies } from '../lib/api';
 
 const resolvers = {
     Query: {
@@ -6,17 +7,21 @@ const resolvers = {
             const users = await User.find({});
             return users;
         },
-        user: async (root, { _id }) => {
+        user: async (_, { _id }) => {
             const user = await User.findById({ _id });
             return user;
+        },
+        movies: async (_, { limit, rating }) => {
+            const movies = await getMovies(limit, rating);
+            return movies;
         }
     },
     Mutation: {
-        addUser: async (root, { name, age, gender }) => {
+        addUser: async (_, { name, age, gender }) => {
             const newUser = await User.create({ name, age, gender });
             return newUser;
         },
-        updateUser: async (root, { _id, name, age, gender }) => {
+        updateUser: async (_, { _id, name, age, gender }) => {
             const updatedUser = await User.findOneAndUpdate(
                 { _id },
                 { name, age, gender },
@@ -24,7 +29,7 @@ const resolvers = {
             );
             return updatedUser;
         },
-        removeUser: async (root, { _id }) => {
+        removeUser: async (_, { _id }) => {
             const deletedUser = await User.findOneAndDelete({ _id });
             if (deletedUser) return true;
             return false;

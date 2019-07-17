@@ -1,8 +1,10 @@
 # import User from 'user.graphql'
+# import Movie from 'movie.graphql'
 
 type Query {
     users: [User]!
     user(_id: String!): User
+    movies(limit: Int, rating: Float): [Movie]!
 }
 
 type Mutation {
