@@ -1,0 +1,6 @@
+# import User from 'user.graphql'
+
+type Query {
+    users: [User]!
+    user(_id: String!): User
+}

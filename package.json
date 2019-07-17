@@ -5,7 +5,8 @@
     "private": true,
     "main": "src/app.js",
     "scripts": {
-        "start": "nodemon --exec babel-node src/app.js",
+        "start": "NODE_ENV=production pm2 build/app.js -i 0",
+        "dev": "nodemon --exec babel-node src/app.js ",
         "build": "babel src --out-dir build"
     },
     "repository": {
@@ -30,6 +31,10 @@
         "nodemon": "^1.19.1"
     },
     "dependencies": {
-        "graphql-yoga": "^1.18.1"
+        "dotenv": "^8.0.0",
+        "graphql-import": "^0.7.1",
+        "graphql-yoga": "^1.18.1",
+        "mongoose": "^5.6.4",
+        "pm2": "^3.5.1"
     }
 }
