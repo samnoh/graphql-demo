@@ -79,11 +79,13 @@ npm install --save-dev @babel/cli @babel/core @babel/node @babel/preset-env node
 ```
 
 -   package.json
+    -   --copy-files -> build with static files including graphql files
 
 ```JSON
 "scripts": {
-    "start": "NODE_ENV=production pm2 start --interpreter babel-node src/app.js -i 0",
-    "dev": "nodemon --exec babel-node src/app.js"
+    "start": "NODE_ENV=production pm2 start build/app.js -i 0",
+    "dev": "nodemon --exec babel-node src/app.js",
+    "build": "npm run clean && babel src --out-dir build --copy-files",
 }
 ```
 
