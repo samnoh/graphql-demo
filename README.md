@@ -5,6 +5,47 @@
 
 ## TIL
 
+### GraphQL
+
+-   Schemas
+    -   ! means required
+
+```graphql
+# import Test from 'test.graphql'
+
+type Query {
+    tests: [Test]!
+}
+
+type Mutation {
+    addTest(text: String!): Test
+}
+```
+
+-   Resolvers
+
+```JavaScript
+const resolvers = {
+    Query: {
+        tests: () => {...}
+    },
+    Mutation: {
+        addTest: (id) => {...}
+    }
+}
+```
+
+-   GraphQL Server
+
+```JavaScript
+import { GraphQLServer } from 'graphql-yoga';
+import { importSchema } from 'graphql-import';
+
+const typeDefs = importSchema(path.join(__dirname, 'graphql', 'schema.graphql'));
+const server = new GraphQLServer({ typeDefs, resolvers });
+server.start(() => console.log('GraphQL server running on localhost:4000'));
+```
+
 ### Babel + nodemon
 
 -   Install
