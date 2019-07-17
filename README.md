@@ -30,7 +30,7 @@ const resolvers = {
         tests: () => {...}
     },
     Mutation: {
-        addTest: (id) => {...}
+        addTest: (_, {id}) => {...}
     }
 }
 ```
@@ -44,6 +44,24 @@ import { importSchema } from 'graphql-import';
 const typeDefs = importSchema(path.join(__dirname, 'graphql', 'schema.graphql'));
 const server = new GraphQLServer({ typeDefs, resolvers });
 server.start(() => console.log('GraphQL server running on localhost:4000'));
+```
+
+-   Requests
+
+```graphql
+Query {
+    Test {
+        text
+    }
+}
+```
+
+```graphql
+Mutation {
+    addTest(text: "Hello") {
+        text
+    }
+}
 ```
 
 ### Babel + nodemon
