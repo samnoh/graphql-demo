@@ -2,6 +2,7 @@
 
 -   graphql-yoga
 -   mongoose
+-   ES6+ syntax using babel
 
 ## TIL
 
