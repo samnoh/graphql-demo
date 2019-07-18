@@ -4,6 +4,7 @@
 type Query {
     users: [User]!
     user(_id: String!): User
+    movie(id: Int!): Movie!
     movies(limit: Int, rating: Float): [Movie]!
 }
 

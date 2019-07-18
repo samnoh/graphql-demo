@@ -1,5 +1,5 @@
 import User from '../models/user';
-import { getMovies } from '../lib/api';
+import { getMovieById, getMovies } from '../lib/api';
 
 const resolvers = {
     Query: {
@@ -10,6 +10,10 @@ const resolvers = {
         user: async (_, { _id }) => {
             const user = await User.findById({ _id });
             return user;
+        },
+        movie: async (_, { id }) => {
+            const movie = await getMovieById(id);
+            return movie;
         },
         movies: async (_, { limit, rating }) => {
             const movies = await getMovies(limit, rating);
