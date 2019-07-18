@@ -5,5 +5,5 @@ type Movie {
     rating: Float!
     language: String!
     medium_cover_image: String!
-    description_intro: String!
+    description_intro: String
 }
