@@ -1,7 +1,6 @@
 import 'dotenv/config';
 import path from 'path';
 import morgan from 'morgan';
-import cors from 'cors';
 import { GraphQLServer } from 'graphql-yoga';
 import { importSchema } from 'graphql-import';
 
@@ -22,8 +21,7 @@ if (prod) {
 server.start(
     {
         port: process.env.PORT || 4000,
-        playground: prod ? false : '/',
-        cors: cors({ origin: prod ? 'https://whatever' : true, optionsSuccessStatus: 200 })
+        playground: prod ? false : '/'
     },
     ({ port }) => console.log(`GraphQL server running on ${port}`)
 );
