@@ -1,8 +1,8 @@
 type Movie {
     id: Int!
     title: String!
+    year: Int!
     rating: Float!
-    summary: String!
     language: String!
     medium_cover_image: String!
 }
