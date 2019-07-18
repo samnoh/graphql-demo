@@ -6,6 +6,7 @@ type Query {
     user(_id: String!): User
     movie(id: Int!): Movie!
     movies(limit: Int, rating: Float): [Movie]!
+    movieSuggestions(id: Int!): [Movie]!
 }
 
 type Mutation {

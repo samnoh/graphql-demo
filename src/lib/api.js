@@ -14,3 +14,8 @@ export const getMovies = (limit, rating) => {
 
     return axios.get(URL).then(res => res.data.data.movies);
 };
+
+export const getSuggestions = id => {
+    const URL = `/movie_suggestions.json?`;
+    return axios.get(`${URL}movie_id=${id}`).then(res => res.data.data.movies);
+};
